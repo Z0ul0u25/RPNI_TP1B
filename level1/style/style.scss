@@ -1,3 +1,78 @@
+@charset "UTF-8";
+
+/**
+ * @author COLLECTIF - @TIMCSF
+ *
+ * TABLE DES MATIERES
+ * Mixins
+ * Normalize
+ * Utilitaires
+ * Charte typographique
+ * Menu
+ * Grille
+ * Mise en page
+ *** Contenus principal et complémentaire
+ *** Architecture des CSS (liste de définitions)
+ *** Pied de page
+ */
+
+/* Mixins
+   ========================================================================== */
+@import "../../utilitaires/_mixins";
+
+/* Normalize
+   ========================================================================== */
+@import "../../utilitaires/_normalize.scss";
+
+/* Utilitaires
+   ========================================================================== */
+@import "../../utilitaires/_utilitaires.scss";
+
+/* Charte typographique
+   ========================================================================== */
+@import "../../utilitaires/_typo.scss";
+
+/* Menu
+   ========================================================================== */
+@import "../../utilitaires/_menu.scss";
+
+/* Grille
+   ========================================================================== */
+@import "../../utilitaires/_grille.scss";
+
+/* Mise en page
+   ========================================================================== */
+
 $couleurPrincipale:#00b289;
 $couleurSecondaire:#4c4d5f;
-$couleurAccent:#f8db62;
+$couleurAccent    :#f8db62;
+
+body {
+    max-width: 1120px;
+    margin   : 0 auto;
+}
+
+header {
+    display: flex;
+
+    nav {
+        ul {
+            list-style-type: none;
+
+            li {
+                display: inline;
+            }
+        }
+    }
+}
+
+.sous-liste:after {
+    content         : " ";
+    background-image: url("../images/down-chevron.svg");
+    background-size : cover;
+    position        : relative;
+    display         : inline-block;
+    top             : 0.25em;
+    width           : 1em;
+    height          : 1em;
+}

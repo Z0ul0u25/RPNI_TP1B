@@ -1,0 +1,55 @@
+/* Variables et utilitaires
+   ========================================================================== */
+
+
+$couleur-texte       : #022b50;
+$couleur-titres-h1-h3: darkmagenta;
+$couleur-dominante   : darkmagenta;
+$couleur-secondaire  : #418cff;
+$bg-couleur-contraste:#efefef;
+$box-shadow          :5px 5px 5px;
+
+
+/*** Clearfix ***/
+.clearfix::after {
+    content: "";
+    display: table;
+    clear  : both;
+}
+
+/*** Harmoniser le modèle de boîte avec Box-Sizing ***/
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Images fluides */
+img {
+    max-width: 100%;
+}
+
+/*** Styles de base ***/
+abbr[title] {
+    text-decoration: none;
+    cursor         : help;
+
+    &:hover {
+        background-color: rgba(244, 161, 71, 0.25);
+    }
+}
+
+/** Accessibilité
+  * Pour cacher visuellement tout en gardant accessible un contenu:
+  * screen-reader-only ou visuallyhidden **/
+.screen-reader-only,
+.visuallyhidden {
+    @include visualyHidden;
+    &:active, &:focus{
+        @include visualyHiddenActiveOrFocus;
+    }
+}

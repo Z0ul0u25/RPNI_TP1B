@@ -1,0 +1,43 @@
+@mixin flxRow {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : stretch;
+}
+
+@mixin smallerText {
+    font-size     : 75%;
+    line-height   : 0;
+    position      : relative;
+    vertical-align: baseline;
+}
+
+@mixin formText {
+    font-family: inherit;
+    /* 1 */
+    font-size  : 100%;
+    /* 1 */
+    line-height: 1.15;
+    /* 1 */
+    margin     : 0;
+    /* 2 */
+}
+
+@mixin visualyHidden {
+    border  : 0;
+    clip    : rect(0 0 0 0);
+    height  : 1px;
+    margin  : -1px;
+    overflow: hidden;
+    padding : 0;
+    position: absolute;
+    width   : 1px;
+}
+
+@mixin visualyHiddenActiveOrFocus {
+    clip    : auto;
+    height  : auto;
+    margin  : 0;
+    overflow: visible;
+    position: static;
+    width   : auto;
+}
