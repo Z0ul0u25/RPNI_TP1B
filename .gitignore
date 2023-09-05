@@ -1,0 +1,3 @@
+.vscode
+# Retrait des fichiers CSS qui sont compilé par l'utilisateur à partir de Sass
+*/css
