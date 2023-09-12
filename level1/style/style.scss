@@ -47,32 +47,77 @@ $couleurPrincipale:#00b289;
 $couleurSecondaire:#4c4d5f;
 $couleurAccent    :#f8db62;
 
-body {
-    max-width: 1120px;
-    margin   : 0 auto;
+body {}
+
+main,
+footer,
+.header__content {
+   max-width: 1120px;
+   margin   : 0 auto;
+}
+
+.forme-bleu {
+   position: absolute;
+   z-index : -1;
+   top     : -40%;
+   left    : 20%;
+   width   : 90%;
+   height  : 120%;
+
+   background-color: #f2faff;
+   border-radius   : 6.6vw;
+   transform       : rotate(-23deg);
 }
 
 header {
-    display: flex;
+   position    : sticky;
+   top         : 0;
+   padding-left: 20px;
+   display     : flex;
+   background  : #fff;
+   width       : auto;
+   flex-grow   : 1;
 
-    nav {
-        ul {
-            list-style-type: none;
+   nav {
+      display: inline;
 
-            li {
-                display: inline;
-            }
-        }
-    }
+      ul {
+         list-style-type: none;
+
+         li {
+            display: inline;
+         }
+      }
+   }
+}
+
+.conteneur_cartes {
+   display       : flex;
+   flex-direction: column;
+   padding: 40px;
+
+   >div {
+      border : .3px solid rgba(2, 4, 69, .15);
+      padding: 20px;
+   }
+
+   @media (min-width:975px) {
+      flex-direction : row;
+      justify-content: space-between;
+
+      >div {
+         width: 32%;
+      }
+   }
 }
 
 .sous-liste:after {
-    content         : " ";
-    background-image: url("../images/down-chevron.svg");
-    background-size : cover;
-    position        : relative;
-    display         : inline-block;
-    top             : 0.25em;
-    width           : 1em;
-    height          : 1em;
+   content         : " ";
+   background-image: url("../images/down-chevron.svg");
+   background-size : cover;
+   position        : relative;
+   display         : inline-block;
+   top             : 0.25em;
+   width           : 1em;
+   height          : 1em;
 }
