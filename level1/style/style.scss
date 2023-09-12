@@ -56,31 +56,6 @@ footer,
    margin   : 0 auto;
 }
 
-.forme-bleu {
-   position: absolute;
-   z-index : -1;
-   top     : -40%;
-   left    : 20%;
-   width   : 90%;
-   height  : 120%;
-
-   background-color: #f2faff;
-   border-radius   : 6.6vw;
-   transform       : rotate(-23deg);
-}
-
-.bouton-principal{
-   @include bouton;
-   // display: inline-block;
-   background-color: $couleurPrincipale;
-   color: #fff;
-}
-
-.bouton-secondaire{
-   @include bouton;
-   color: $couleurPrincipale;
-}
-
 header {
    position    : sticky;
    z-index     : 100;
@@ -108,12 +83,44 @@ header {
    }
 }
 
+#entete{
+   display: flex;
+   vertical-align: bottom;
+}
+
+.forme-bleu {
+   position: absolute;
+   z-index : -1;
+   top     : -40%;
+   left    : 20%;
+   width   : 90%;
+   height  : 120%;
+
+   background-color: #f2faff;
+   border-radius   : 6.6vw;
+   transform       : rotate(-23deg);
+}
+
+.bouton-principal{
+   @include bouton;
+   // display: inline-block;
+   background-color: $couleurPrincipale;
+   color: #fff;
+}
+
+.bouton-secondaire{
+   @include bouton;
+   color: $couleurPrincipale;
+}
+
+
 .conteneur_cartes {
    display       : flex;
    flex-direction: column;
    padding       : 40px;
 
    >div {
+      background-color: #fff;
       position      : relative;
       overflow      : hidden;
       border        : .3px solid rgba(2, 4, 69, .15);
@@ -122,6 +129,8 @@ header {
       flex-direction: column;
 
       .titre-carte {
+         font-size: 2.3rem;
+         font-weight: 500;
          +* {
             max-width: 82%;
          }
