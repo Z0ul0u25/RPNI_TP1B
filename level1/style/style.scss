@@ -47,7 +47,7 @@ $couleurPrincipale:#00b289;
 $couleurSecondaire:#4c4d5f;
 $couleurAccent    :#f8db62;
 
-body {}
+// body {}
 
 main,
 footer,
@@ -69,24 +69,40 @@ footer,
    transform       : rotate(-23deg);
 }
 
+.bouton-principal{
+   @include bouton;
+   // display: inline-block;
+   background-color: $couleurPrincipale;
+   color: #fff;
+}
+
+.bouton-secondaire{
+   @include bouton;
+   color: $couleurPrincipale;
+}
+
 header {
    position    : sticky;
    z-index     : 100;
    top         : 0;
    padding-left: 20px;
-   display     : flex;
    background  : #fff;
    width       : auto;
    flex-grow   : 1;
 
-   nav {
-      display: inline;
+   div {
 
-      ul {
-         list-style-type: none;
+      display: flex;
 
-         li {
-            display: inline;
+      nav {
+         display: flex;
+         padding: 20px;
+         ul {
+            list-style-type: none;
+
+            li {
+               display: inline;
+            }
          }
       }
    }
@@ -98,14 +114,15 @@ header {
    padding       : 40px;
 
    >div {
-      position: relative;
-      overflow: hidden;
-      border  : .3px solid rgba(2, 4, 69, .15);
-      padding : 20px;
-      display: flex;
+      position      : relative;
+      overflow      : hidden;
+      border        : .3px solid rgba(2, 4, 69, .15);
+      padding       : 20px;
+      display       : flex;
       flex-direction: column;
-      .titre-carte{
-         + *{
+
+      .titre-carte {
+         +* {
             max-width: 82%;
          }
       }
@@ -129,18 +146,19 @@ header {
       bottom          : auto;
       width           : 360px;
       transform       : rotate(45deg);
-      height: min-content;
+      height          : min-content;
 
       text-transform: uppercase;
       text-align    : center;
-      p{
+
+      p {
          line-height: 50%;
          font-weight: bold;
       }
    }
 
    .bouton-principal {
-      display: block;
+      display   : block;
       margin-top: auto;
    }
 }
