@@ -71,28 +71,46 @@ header {
       display: flex;
 
       nav {
-         display: flex;
-         padding: 20px;
+         display        : flex;
+         padding        : 20px;
          justify-content: flex-end;
 
          width: 100%;
 
          ul {
-            padding: 0;
+            padding        : 0;
             list-style-type: none;
 
-            display: flex;
-            margin-right: 5%;
+            display        : flex;
+            margin-right   : 5%;
             justify-content: space-around;
 
             flex-grow: 1;
 
+            li {
+               a {
+                  display: inline-flex;
+                  height: 1em;
+                  align-items: center;
+                  text-decoration: none;
+                  color          : $couleurSecondaire;
+
+                  &:after {
+                     content         : "";
+                     background-image: url("../images/down-chevron.svg");
+                     background-size : 0.75em;
+                     height          : 0.75em;
+                     width           : 0.75em;
+                     margin-left: 0.5em;
+                  }
+               }
+            }
          }
 
-         div{
-            display: flex;
+         div {
+            display        : flex;
             justify-content: flex-end;
-            flex: 0 0 auto;
+            flex           : 0 0 auto;
          }
       }
    }
@@ -101,8 +119,8 @@ header {
 #entete {
    display       : flex;
    vertical-align: bottom;
-   margin:auto;
-   text-align: center;
+   margin        : auto;
+   text-align    : center;
 }
 
 .forme-bleu {
@@ -113,7 +131,7 @@ header {
    bottom  : auto;
    left    : 0;
    width   : 80vw;
-   height: 50%;
+   height  : 50%;
 
    background-color: #f2faff;
    border-radius   : 6.6vw;
@@ -142,11 +160,11 @@ header {
 
 
 .conteneur_cartes {
-   display       : flex;
-   flex-direction: column;
-   padding       : 40px;
+   display        : flex;
+   flex-direction : column;
+   padding        : 40px;
    justify-content: space-between;
-   row-gap: 20px;
+   row-gap        : 20px;
 
    >div {
       background-color: #fff;
@@ -165,7 +183,8 @@ header {
       .titre-carte {
          font-size  : 2.3rem;
          font-weight: 500;
-         row-gap: 0;
+         row-gap    : 0;
+
          +* {
             max-width: 82%;
          }
@@ -174,7 +193,8 @@ header {
 
 
    @media (min-width:975px) {
-      flex-direction : row;
+      flex-direction: row;
+
       >div {
          width: 32%;
       }
