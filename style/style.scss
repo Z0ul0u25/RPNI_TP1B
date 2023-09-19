@@ -43,9 +43,11 @@
 /* Mise en page
    ========================================================================== */
 
+/* Variables */
 $couleurPrincipale:#00b289;
 $couleurSecondaire:#4c4d5f;
 $couleurAccent    :#f8db62;
+
 
 // body {}
 
@@ -63,7 +65,6 @@ header {
    padding-left: 20px;
    background  : #fff;
    width       : auto;
-   flex-grow   : 1;
 
    div {
 
@@ -72,13 +73,26 @@ header {
       nav {
          display: flex;
          padding: 20px;
+         justify-content: flex-end;
+
+         width: 100%;
 
          ul {
+            padding: 0;
             list-style-type: none;
 
-            li {
-               display: inline;
-            }
+            display: flex;
+            margin-right: 5%;
+            justify-content: space-around;
+
+            flex-grow: 1;
+
+         }
+
+         div{
+            display: flex;
+            justify-content: flex-end;
+            flex: 0 0 auto;
          }
       }
    }
@@ -87,6 +101,8 @@ header {
 #entete {
    display       : flex;
    vertical-align: bottom;
+   margin:auto;
+   text-align: center;
 }
 
 .forme-bleu {
@@ -129,6 +145,8 @@ header {
    display       : flex;
    flex-direction: column;
    padding       : 40px;
+   justify-content: space-between;
+   row-gap: 20px;
 
    >div {
       background-color: #fff;
@@ -147,17 +165,16 @@ header {
       .titre-carte {
          font-size  : 2.3rem;
          font-weight: 500;
-
+         row-gap: 0;
          +* {
             max-width: 82%;
          }
       }
    }
 
+
    @media (min-width:975px) {
       flex-direction : row;
-      justify-content: space-between;
-
       >div {
          width: 32%;
       }
