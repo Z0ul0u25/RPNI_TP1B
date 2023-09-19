@@ -47,6 +47,7 @@
 $couleurPrincipale:#00b289;
 $couleurSecondaire:#4c4d5f;
 $couleurAccent    :#f8db62;
+$tailleTable      : 975px;
 
 
 // body {}
@@ -58,40 +59,52 @@ footer,
    margin   : 0 auto;
 }
 
+
 header {
    position    : sticky;
    z-index     : 100;
    top         : 0;
-   padding-left: 20px;
+   padding: 0 20px;
    background  : #fff;
-   width       : auto;
 
-   div {
+   width        : auto;
+   height       : 100px;
+
+   display: flex;
+   align-items: center;
+
+   >div {
 
       display: flex;
+      justify-content: space-between;
+      width: 100vw;
 
       nav {
-         display        : flex;
-         padding        : 20px;
-         justify-content: flex-end;
 
-         width: 100%;
+         display: none;
+         align-items: center;
 
-         ul {
-            padding        : 0;
-            list-style-type: none;
+         @media (min-width: $tailleTable) {
 
             display        : flex;
-            margin-right   : 5%;
-            justify-content: space-around;
+            justify-content: flex-end;
 
-            flex-grow: 1;
+            width: 100%;
 
-            li {
-               a {
-                  display: inline-flex;
-                  height: 1em;
-                  align-items: center;
+            ul {
+               padding        : 0;
+               list-style-type: none;
+
+               display        : flex;
+               margin-right   : 5%;
+               justify-content: space-around;
+
+               flex-grow: 1;
+
+               li a {
+                  display        : inline-flex;
+                  height         : 1em;
+                  align-items    : center;
                   text-decoration: none;
                   color          : $couleurSecondaire;
 
@@ -101,16 +114,17 @@ header {
                      background-size : 0.75em;
                      height          : 0.75em;
                      width           : 0.75em;
-                     margin-left: 0.5em;
+                     margin-left     : 0.5em;
                   }
                }
             }
-         }
 
-         div {
-            display        : flex;
-            justify-content: flex-end;
-            flex           : 0 0 auto;
+            div {
+               display        : flex;
+               justify-content: flex-end;
+               flex           : 0 0 auto;
+            }
+
          }
       }
    }
@@ -121,6 +135,25 @@ header {
    vertical-align: bottom;
    margin        : auto;
    text-align    : center;
+}
+
+#nav__hamburger{
+   display: block;
+   // position: fixed;
+   // right: 20px;
+
+   div{
+      width: 45px;
+      height: 0;
+      margin: 1vh 0;
+      border-radius: 5px;
+      border-top:$couleurSecondaire 2px solid;
+      border-bottom:$couleurSecondaire 2px solid;
+   }
+
+   @media (min-width:$tailleTable){
+      display: none;
+   }
 }
 
 .forme-bleu {
@@ -137,7 +170,7 @@ header {
    border-radius   : 6.6vw;
    transform       : rotate(-23deg);
 
-   @media (min-width:1000px) {
+   @media (min-width:$tailleTable) {
       top   : -50%;
       right : -25%;
       left  : -10%;
@@ -192,7 +225,7 @@ header {
    }
 
 
-   @media (min-width:975px) {
+   @media (min-width:$tailleTable) {
       flex-direction: row;
 
       >div {
