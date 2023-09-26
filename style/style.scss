@@ -140,12 +140,35 @@ h2 {
    text-align: center;
 }
 
-main a{
-   text-transform: uppercase;
-   color: $couleurPrincipale;
+main a {
+   text-transform : uppercase;
+   color          : $couleurPrincipale;
    text-decoration: none;
 }
 
+footer {
+   a {
+      text-decoration: none;
+      color: #4c4d5f;
+   }
+
+   ul {
+      list-style-type: none;
+      padding-left   : 8px;
+      line-height    : 200%;
+   }
+
+   #footer__principal {
+      p{
+         font-weight: bold;
+      }
+      @media (min-width:$tailleTable) {
+
+         display: flex;
+         justify-content: space-between;
+      }
+   }
+}
 
 #entete {
    display        : flex;
@@ -179,35 +202,37 @@ main a{
    }
 }
 
-#your_business{
-   display: flex;
+#your_business {
+   display  : flex;
    flex-wrap: wrap;
 
-   text-align: center;
+   text-align     : center;
    justify-content: center;
 
    max-width: 900px;
-   margin: 0 auto;
-   padding: 4rem 3rem;
+   margin   : 0 auto;
+   padding  : 4rem 3rem;
 
-   border-radius: 5px;
+   border-radius   : 5px;
    background-color: #f2faff;
 
-   @media (min-width:$tailleTable){
+   @media (min-width:$tailleTable) {
 
       justify-content: space-between;
-      align-items: center;
+      align-items    : center;
 
    }
 
-   >div{
-      width: 70%;
+   >div {
+      width     : 70%;
       text-align: center;
-      font-size: 36px;
-      @media (min-width:$tailleTable){
+      font-size : 36px;
+
+      @media (min-width:$tailleTable) {
          font-size: 48px;
       }
-      p{
+
+      p {
          margin: 0;
       }
    }
@@ -363,12 +388,12 @@ main a{
             }
          }
 
-         &:not(:first-of-type){
+         &:not(:first-of-type) {
             text-transform: uppercase;
          }
       }
 
-      @media (min-width:$tailleTable){
+      @media (min-width:$tailleTable) {
          text-align: center;
       }
 
@@ -387,6 +412,6 @@ main a{
    height          : 1em;
 }
 
-.couleur-principal{
+.couleur-principal {
    color: $couleurPrincipale;
 }
