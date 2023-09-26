@@ -50,38 +50,43 @@ $couleurAccent    :#f8db62;
 $tailleTable      : 975px;
 
 
-// body {}
+body {
+   background-color: #fbfbfb;
+}
 
 main,
 footer,
 .header__content {
    max-width: 1120px;
-   margin   : 0 auto;
+   margin   : 0 10px;
+
+   @media (min-width:$tailleTable) {
+      margin: 0 auto;
+   }
 }
 
-
 header {
-   position    : sticky;
-   z-index     : 100;
-   top         : 0;
-   padding: 0 20px;
-   background  : #fff;
+   position  : sticky;
+   z-index   : 100;
+   top       : 0;
+   padding   : 0 20px;
+   background: #fff;
 
-   width        : auto;
-   height       : 100px;
+   width : auto;
+   height: 100px;
 
-   display: flex;
+   display    : flex;
    align-items: center;
 
    >div {
 
-      display: flex;
+      display        : flex;
       justify-content: space-between;
-      width: 100vw;
+      width          : 100vw;
 
       nav {
 
-         display: none;
+         display    : none;
          align-items: center;
 
          @media (min-width: $tailleTable) {
@@ -130,29 +135,81 @@ header {
    }
 }
 
-#entete {
-   display       : flex;
-   vertical-align: bottom;
-   margin        : auto;
-   text-align    : center;
+h1,
+h2 {
+   text-align: center;
 }
 
-#nav__hamburger{
-   display: block;
+main a{
+   text-transform: uppercase;
+   color: $couleurPrincipale;
+   text-decoration: none;
+}
+
+
+#entete {
+   display        : flex;
+   margin         : auto;
+   text-align     : center;
+   justify-content: center;
+
+   div {
+      position   : relative;
+      display    : flex;
+      align-items: center;
+   }
+}
+
+#nav__hamburger {
+   display    : block;
    // position: fixed;
    // right: 20px;
 
-   div{
-      width: 45px;
-      height: 0;
-      margin: 1vh 0;
+   div {
+      width        : 45px;
+      height       : 0;
+      margin       : 1vh 0;
       border-radius: 5px;
-      border-top:$couleurSecondaire 2px solid;
-      border-bottom:$couleurSecondaire 2px solid;
+      border-top   : $couleurSecondaire 2px solid;
+      border-bottom: $couleurSecondaire 2px solid;
    }
 
-   @media (min-width:$tailleTable){
+   @media (min-width:$tailleTable) {
       display: none;
+   }
+}
+
+#your_business{
+   display: flex;
+   flex-wrap: wrap;
+
+   text-align: center;
+   justify-content: center;
+
+   max-width: 900px;
+   margin: 0 auto;
+   padding: 4rem 3rem;
+
+   border-radius: 5px;
+   background-color: #f2faff;
+
+   @media (min-width:$tailleTable){
+
+      justify-content: space-between;
+      align-items: center;
+
+   }
+
+   >div{
+      width: 70%;
+      text-align: center;
+      font-size: 36px;
+      @media (min-width:$tailleTable){
+         font-size: 48px;
+      }
+      p{
+         margin: 0;
+      }
    }
 }
 
@@ -259,6 +316,66 @@ header {
    }
 }
 
+.add_on {
+
+   display        : flex;
+   flex-direction : column-reverse;
+   justify-content: space-between;
+   align-items    : flex-start;
+
+   margin-bottom: 10px;
+   padding      : 10px 40px 5px;
+
+   background-color: #fff;
+   border-radius   : 5px;
+
+   @media (min-width:$tailleTable) {
+      flex-direction: initial;
+      padding       : 20px 0;
+   }
+
+   .add_on__contenu {
+      width    : 100%;
+      max-width: 600px;
+
+      @media (min-width:$tailleTable) {
+         width: 80%;
+      }
+
+      p:first-of-type {
+         font-weight: 500;
+      }
+   }
+
+   .add_on__prix {
+      width: 20%;
+
+      p {
+         margin: 0;
+
+         &:first-of-type {
+            margin     : 0;
+            font-size  : 1.5em;
+            font-weight: bold;
+
+            &.add_on__prix-xl {
+               font-size: 44px;
+            }
+         }
+
+         &:not(:first-of-type){
+            text-transform: uppercase;
+         }
+      }
+
+      @media (min-width:$tailleTable){
+         text-align: center;
+      }
+
+   }
+
+}
+
 .sous-liste:after {
    content         : " ";
    background-image: url("../images/down-chevron.svg");
@@ -268,4 +385,8 @@ header {
    top             : 0.25em;
    width           : 1em;
    height          : 1em;
+}
+
+.couleur-principal{
+   color: $couleurPrincipale;
 }
